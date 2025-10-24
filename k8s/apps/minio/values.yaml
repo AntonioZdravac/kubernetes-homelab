@@ -29,7 +29,7 @@ mcImage:
   pullPolicy: IfNotPresent
 
 ## minio mode, i.e. standalone or distributed
-mode: distributed ## other supported values are "standalone"
+mode: standalone ## other supported values are "standalone"
 
 ## Additional labels to include with deployment or statefulset
 additionalLabels: {}
@@ -120,7 +120,7 @@ bucketRoot: ""
 # Number of drives attached to a node
 drivesPerNode: 1
 # Number of MinIO containers running
-replicas: 16
+replicas: 1
 # Number of expanded MinIO clusters
 pools: 1
 
@@ -162,7 +162,7 @@ persistence:
   storageClass: "local-path"
   volumeName: ""
   accessMode: ReadWriteOnce
-  size: 500Gi
+  size: 5Gi
 
   ## If subPath is set mount a sub folder of a volume instead of the root of the volume.
   ## This is especially handy for volume plugins that don't natively support sub mounting (like glusterfs).
@@ -290,7 +290,11 @@ podLabels: {}
 ##
 resources:
   requests:
-    memory: 16Gi
+    memory: 256Mi
+    cpu: 100m
+  limits:
+    memory: 512Mi
+    cpu: 500m
 
 ## List of policies to be created after minio install
 ##
