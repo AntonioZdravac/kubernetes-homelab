@@ -24,7 +24,7 @@ spec:
       maxSurge: {{ .Values.deploymentUpdate.maxSurge }}
       maxUnavailable: {{ .Values.deploymentUpdate.maxUnavailable }}
     {{- end }}
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: {{ template "minio.name" . }}

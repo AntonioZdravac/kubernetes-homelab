@@ -29,7 +29,7 @@ mcImage:
   pullPolicy: IfNotPresent
 
 ## minio mode, i.e. standalone or distributed
-mode: standalone ## other supported values are "standalone"
+mode: standalone ## it was set to "distributed" by default, I made a change to "standalone"
 
 ## Additional labels to include with deployment or statefulset
 additionalLabels: {}
@@ -120,7 +120,7 @@ bucketRoot: ""
 # Number of drives attached to a node
 drivesPerNode: 1
 # Number of MinIO containers running
-replicas: 2
+replicas: 1
 # Number of expanded MinIO clusters
 pools: 1
 
