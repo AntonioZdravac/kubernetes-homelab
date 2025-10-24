@@ -67,7 +67,7 @@ podLabels: {}
 
 # Resource requests/limits to specify for the Velero deployment.
 # https://velero.io/docs/v1.6/customize-installation/#customize-resource-requests-and-limits
-resources: {}
+resources:
   requests:
     cpu: 200m
     memory: 128Mi
