@@ -43,6 +43,14 @@ singleBinary:
     - name: GOMEMLIMIT
       value: 350MiB
 
+monitoring:
+  dashboards:
+    enabled: false
+  rules:
+    enabled: false
+  serviceMonitor:
+    enabled: false
+
 chunksCache:
   # default is 500MB, with limited memory keep this smaller
   writebackSizeLimit: 10MB
