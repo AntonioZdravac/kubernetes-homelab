@@ -44,8 +44,27 @@ data:
             { "expr": "node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes" }
           ],
           "fieldConfig": {
-            "defaults": {
-              "unit": "bytes"
+            "defaults": { 
+              "thresholds": {
+                "mode": "percentage",
+                "steps": [
+                  {
+                    "value": null,
+                    "color": "green"
+                  },
+                  {
+                    "value": 50,
+                    "color": "yellow"
+                  },
+                  {
+                    "value": 90,
+                    "color": "red"
+                  }
+                ]
+              },
+              "unit": "bytes",
+              "min": 0,
+              "max": 8206307328
             }
           }
         },
@@ -59,7 +78,26 @@ data:
           ],
           "fieldConfig": {
             "defaults": {
-              "unit": "bytes"
+              "thresholds": {
+                "mode": "percentage",
+                "steps": [
+                  {
+                    "value": null,
+                    "color": "red"
+                  },
+                  {
+                    "value": 10,
+                    "color": "yellow"
+                  },
+                  {
+                    "value": 50,
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "bytes",
+              "min": 0,
+              "max": 8206307328
             }
           }
         }
