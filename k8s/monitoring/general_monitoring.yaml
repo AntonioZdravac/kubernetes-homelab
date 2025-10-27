@@ -38,8 +38,22 @@ data:
       "panels": [
         {
           "type": "gauge",
-          "title": "Available Memory",
+          "title": "Consumed Memory",
           "gridPos": { "x": 0, "y": 0, "w": 12, "h": 9 },
+          "targets": [
+            { "expr": "node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes" }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "bytes"
+            }
+          }
+        },
+
+        {
+          "type": "gauge",
+          "title": "Available Memory",
+          "gridPos": { "x": 12, "y": 0, "w": 12, "h": 9 },
           "targets": [
             { "expr": "node_memory_MemAvailable_bytes" }
           ],
