@@ -32,7 +32,7 @@ spec:
         volumeMounts:
         - name: db
           mountPath: /var/lib/mysql
-        volumes:
-        - name: db
-          emptyDir:
-            medium: Memory
+      volumes:
+      - name: db
+        emptyDir:
+          medium: Memory
