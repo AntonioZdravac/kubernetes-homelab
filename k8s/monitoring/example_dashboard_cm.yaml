@@ -10,11 +10,16 @@ metadata:
 data:
   example-dashboard.json: |
     {
+      "id": null,
+      "uid": "cpu-usage",
       "title": "CPU Usage",
+      "schemaVersion": 36,
+      "version": 1,
       "panels": [
         {
-          "type": "graph",
+          "type": "timeseries",
           "title": "CPU Usage",
+          "gridPos": { "x": 0, "y": 0, "w": 24, "h": 9 },
           "targets": [
             { "expr": "node_cpu_seconds_total" }
           ]
