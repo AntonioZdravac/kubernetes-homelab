@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: iron-gallery-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: iron-namespace-datacenter
+    server: https://kubernetes.default.svc
+  project: antonios
+  source:
+    path: k8s/apps/iron_gallery_app
+    repoURL: https://github.com/AntonioZdravac/kubernetes-homelab
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
