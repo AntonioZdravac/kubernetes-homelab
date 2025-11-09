@@ -7,7 +7,7 @@ loki:
   enabled: true
   image:
     repository: grafana/loki
-    tag: 2.10.2
+    tag: 2.9.17
   isDefault: true
   url: http://{{(include "loki.serviceName" .)}}:{{ .Values.loki.service.port }}
   readinessProbe:
